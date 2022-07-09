@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body{
-    scroll-behavior: smooth;
     font-family: 'Barlow', sans-serif;
     background: linear-gradient(#FCFBFE, #F1F2F6, #E0E3ED,#D5D9E8);
-    /* height: 100vh; */
     background-repeat: no-repeat;
-    /* overflow-x: hidden; */
+    margin: 0;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 a{
@@ -28,11 +30,38 @@ header{
     justify-content: space-between;
 }
 
-.container{
-    width: 95%;
-    max-width: 1400px;
-    margin: 0 auto;
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
 }
+
 
 .nav-logo{
     width: 150px;
@@ -80,9 +109,7 @@ header{
     min-width: 400px;
     display: flex;
     flex-direction: column;
-    /* gap: 2rem; */
     justify-content: space-around;
-    /* flex-basis: 50%; */
 }
 
 .hero-left .subtitle {
@@ -109,8 +136,9 @@ header{
 
 .hero-left div:nth-child(3){
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
+    margin-top: 1.5rem;
 }
 .hero-left div:nth-child(3) a{
     text-decoration: underline;
@@ -136,7 +164,6 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* flex-basis: 50%; */
 }
 
 .hero-right .capsule{
@@ -254,16 +281,18 @@ footer{
 
 .footer-right .info div:nth-child(3){
     font-weight: 700;
-    /* font-size: 1.2rem; */
+}
+
+@media screen and (min-width: 601px) and  (max-width:850px) {
+    .hero-left{
+        height: 500px;
+    }
+    .nav-menu ul {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    body{
-        overflow-x: hidden;
-    }
-    .container{
-        padding-inline: 2rem;
-    }
     .nav-menu ul{
         display: none;
     }
